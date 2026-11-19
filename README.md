@@ -1,3 +1,11 @@
+> [!IMPORTANT]
+> **Account migration notice:** This is the new official home of this project.
+> The previous GitHub account (**naxci1**) was suspended without notice on
+> 2026-10-30 (appeal submitted). All releases, updates and support for this
+> project now continue on this account (**naxci1-new**). If you followed this
+> project under the old account - you are in the right place.
+
+
 # 1Click SeedVR2.5 — GUI Reference Guide
 
 > · A high‑performance AI video restoration GUI built on the ByteDance **SeedVR2** architecture.

@@ -377,6 +377,14 @@ When the preview completes, the dual **QPixmap** comparison engine:
 
 ---
 
+### v2.1.2 — Engine download verification fix
+
+- **Fixed engine downloads failing on systems where the size metadata lookup fails** - downloads are now verified against the download server's own reported size first, with cached metadata as fallback
+- Includes all v2.1.1 fixes (MXF end to end, ProRes preview, MXF timeline seeking)
+- The app correctly reports **v2.1.2**
+
+---
+
 ### v2.1.1 — MXF processing engine fix, engine download retry, AMD GPU clarity
 
 - **MXF processing engine fix** - the v2.1.0 interface accepted .mxf but the processing engine still rejected it ("Unsupported input type"); the engine now accepts .mxf directly - import, preview, timeline seeking and export all work

@@ -366,6 +366,26 @@ When the preview completes, the dual **QPixmap** comparison engine:
 
 ## 4. Changelog & Recent Upgrades
 
+### v2.1.0 — New official home, complete MXF support, engine download hardening
+
+- **New official home** - the previous account was suspended without notice; all releases and updates continue here
+- **MXF (ProRes OP-1a) accepted end to end** - drag & drop, folder mode, processing engine
+- **Fixed the black preview frame** on ProRes / 10-bit 4:2:2 sources (preview only - exported video is untouched)
+- **Engine downloads are size-verified against the exact server file size** - corrupted downloads are rejected and retried
+- **Automatic image-engine download gated to Blackwell GPUs** - older GPUs use their locally built engine
+- The app correctly reports its version (the previous setup wrapped an exe that still self-reported 2.0.1)
+
+---
+
+### v2.1.1 — MXF processing engine fix, engine download retry, AMD GPU clarity
+
+- **MXF processing engine fix** - the v2.1.0 interface accepted .mxf but the processing engine still rejected it ("Unsupported input type"); the engine now accepts .mxf directly - import, preview, timeline seeking and export all work
+- **Engine downloads: exact size verification + automatic retry (up to 3 attempts)** - interrupted or corrupted downloads on unstable connections are retried instead of being deleted with "Failed to download"
+- **Non-NVIDIA GPUs (AMD/Intel):** the engine panel now explains that TensorRT engines require an NVIDIA RTX GPU instead of offering downloads that cannot run there; fixed a crash when closing the panel during an active download
+- The app correctly reports **v2.1.1**
+
+---
+
 ### v2.0.2 — MXF end-to-end, ProRes preview fix, engine download hardening
 
 - **MXF (ProRes OP-1a) works end to end** - the processing engine now accepts .mxf directly (v2.0.1 only accepted it in the interface)

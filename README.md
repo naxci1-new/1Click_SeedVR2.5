@@ -377,11 +377,14 @@ When the preview completes, the dual **QPixmap** comparison engine:
 
 ---
 
-### v2.1.2 — Engine download verification fix
+### v2.1.3 — Engine download fixes (hidden crash, real retries, exact sizes)
 
-- **Fixed engine downloads failing on systems where the size metadata lookup fails** - downloads are now verified against the download server's own reported size first, with cached metadata as fallback
-- Includes all v2.1.1 fixes (MXF end to end, ProRes preview, MXF timeline seeking)
-- The app correctly reports **v2.1.2**
+- **Fixed the engine-manager Download button silently dying on click** (a hidden worker crash before any download started) - the button no longer sticks at "Downloading..."
+- **Downloads now retry for real** - up to 3 attempts with a 60-second pause when the server rate-limits (HTTP 429/503); a crash in the retry routine itself (missing internal import) was fixed, so the retry feature announced in v2.1.1/v2.1.2 actually works now
+- **Size validation hardened** - the server's own reported size is checked first, then exact known sizes, then estimates; valid downloads can no longer be rejected as truncated
+- **Clearer dialog status** - live MB progress, "Attempt N failed - retrying..." during retries, exact failure reason on error, the card switches to Installed on success
+- **Render-time engine auto-download** hardened with the same retry + validation logic
+- v2.1.2 was withdrawn shortly after publishing (built from an incomplete source tree) - this release replaces it
 
 ---
 
